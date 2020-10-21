@@ -10,7 +10,7 @@ setup(
     author='Robin Edwards',
     author_email='robin.ge@gmail.com',
     zip_safe=True,
-    url='http://github.com/neo4j-contrib/neomodel',
+    url='https://github.com/helomics-software-dev/ssl-neomodel.git',
     license='MIT',
     packages=find_packages(exclude=('test', 'test.*')),
     keywords='graph neo4j ORM OGM',
