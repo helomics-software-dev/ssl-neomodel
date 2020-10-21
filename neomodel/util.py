@@ -93,12 +93,10 @@ class Database(local, NodeClassRegistry):
             credentials, hostname = u.netloc.rsplit('@', 1)
             username, password, = credentials.split(':')
         else:
-            raise ValueError("Expecting url format: bolt://user:password@localhost:7687"
-                             " got {0}".format(url))
+            raise ValueError("Expecting url format: bolt://user:password@localhost:7687 got {0}".format(url))
 
-        self.driver = GraphDatabase.driver(u.scheme + '://' + hostname,
-                                           auth=basic_auth(username, password),
-                                           max_connection_pool_size=config.MAX_CONNECTION_POOL_SIZE)
+        self.driver = GraphDatabase.driver(u.scheme + '://' + hostname, auth=basic_auth(username, password))
+
         self.url = url
         self._pid = os.getpid()
         self._active_transaction = None
