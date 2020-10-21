@@ -98,7 +98,6 @@ class Database(local, NodeClassRegistry):
 
         self.driver = GraphDatabase.driver(u.scheme + '://' + hostname,
                                            auth=basic_auth(username, password),
-                                           encrypted=config.ENCRYPTED_CONNECTION,
                                            max_connection_pool_size=config.MAX_CONNECTION_POOL_SIZE)
         self.url = url
         self._pid = os.getpid()
